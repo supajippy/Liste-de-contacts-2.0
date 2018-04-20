@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Occupation {
+public class Occupation implements Serializable {
 
     private String Poste="";
     private Entreprise ent=new Entreprise();

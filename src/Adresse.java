@@ -1,6 +1,8 @@
+import java.awt.*;
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Adresse {
+public class Adresse implements Serializable {
 
     public String getNumero() {
         return Numero;

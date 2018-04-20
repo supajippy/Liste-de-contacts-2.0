@@ -1,4 +1,6 @@
-public class Entreprise {
+import java.io.Serializable;
+
+public class Entreprise implements Serializable {
     private String Nom="";
 
     public void setNom(String nom) {

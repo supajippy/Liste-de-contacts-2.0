@@ -1,8 +1,9 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Contacts {
+public class Contacts implements Serializable {
     private String Prenom="";
     private String Nom="";
      static int conts=0;

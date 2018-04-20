@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-public class Telephone {
+public class Telephone implements Serializable {
     private String Nom = "Vide";
     private String Numero = "Vide";
 
