@@ -65,6 +65,7 @@ public class Contacts implements Serializable {
                 System.out.println("À quoi sert ce numero? Maison,Travail,Mobile,...");
                 this.numerosdeTelephones.get(i).setNom(sc.next());
                 System.out.println(" Veuillez entrer le numéro");
+                verifiertelephone(sc.next());
                 this.numerosdeTelephones.get(i).setNumero(sc.next());
                 i++;
 
@@ -79,5 +80,21 @@ public class Contacts implements Serializable {
        return this.getNom();
     }
 
-}
+    public static void verifiertelephone(String tel){
+        int diviseur=1;
+        for(int i=0;i<tel.length();i++){
+
+            if(tel.charAt(i)<48||tel.charAt(i)>57||tel.length()>10){
+                diviseur=0;
+            }}
+        try{
+            int exception=1/diviseur;
+        }
+        catch (ArithmeticException e){
+            System.out.println("Veuillez entrer un numero de telephone valable");
+        }
+        }
+    }
+
+
 

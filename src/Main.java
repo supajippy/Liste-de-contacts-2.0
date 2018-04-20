@@ -71,6 +71,16 @@ public class Main {
                 break;
         }
     }
+        try{
+            ObjectOutputStream sauvegarde = new ObjectOutputStream(
+                    new BufferedOutputStream(
+                            new FileOutputStream("save.dat")));
+            sauvegarde.writeObject(conts);
+            System.out.println("Sauvegarde effectuée");
+            sauvegarde.close();
+        }   catch (IOException e){
+            e.printStackTrace();
+        }
 
 }
 
@@ -129,7 +139,6 @@ public class Main {
         verifierString(sc.next());
         nouveau.setPrenom(sc.next());
         System.out.println("Quel est son nom?");
-        sc.next();
         verifierString(sc.next());
         nouveau.setNom(sc.next());
         nouveau.setNumeroentree(Contacts.conts);
@@ -187,8 +196,10 @@ public class Main {
             catch (ArithmeticException e){
                 System.out.println("Vous avez entré un mauvais caractère, veuillez recommencer");
             }
-        }
     }
+
+    }
+
 
 
 

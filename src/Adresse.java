@@ -62,22 +62,58 @@ public class Adresse implements Serializable {
     public void assigneradresse(){
         Scanner sc= new Scanner(System.in);
         System.out.println("Quel est son numero civique?");
+        verifierchiffre(sc.next());
         this.setNumero(sc.next());
         System.out.println("Quel est son nom de rue?");
+        verifierString(sc.next());
         this.setRue(sc.next());
         System.out.println("A-t-il un numero d'appartement? 1-oui 2-non");
         if(sc.next().equals("1"))
         {
             System.out.println("Lequel?");
+            verifierchiffre(sc.next());
             this.setApp(sc.next());
         }
         else{};
         System.out.println("Quelle est sa ville?");
+        verifierString(sc.next());
         this.setVille(sc.next());
         System.out.println("Quelle est sa province?");
+        verifierString(sc.next());
         this.setProv(sc.next());
         System.out.println("Quel est son pays?");
+        verifierString(sc.next());
         this.setPays(sc.next());
+    }
+    public static void verifierString(String sc){
+        int diviseur=1;
+        for(int i=0;i<sc.length();i++) {
+            if (sc.charAt(i) < 65 || sc.charAt(i) > 122) {
+                diviseur = 0;
+            }
+        }
+        try{
+            int exception = 1/diviseur;
+        }
+        catch (ArithmeticException e){
+            System.out.println("Vous avez entré un mauvais caractère, veuillez recommencer");
+        }
+    }
+    public static void verifierchiffre(String sc){
+        int diviseur=2;
+        for(int i=0;i<sc.length();i++) {
+            if (sc.charAt(i) < 48 || sc.charAt(i) > 57) {
+                diviseur = 0;
+            }
+        }
+        try{
+            int exception = 1/diviseur;
+        }
+        catch (ArithmeticException e){
+            System.out.println("Vous avez entré un mauvais chiffre, veuillez recommencer");
+            diviseur=0;
+        }
     }
 
 }
+
